@@ -1,6 +1,6 @@
 % MIT License
 % 
-% Copyright (c) [year] [fullname]
+% Copyright (c) 2022 Francesco Ioli
 % 
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
@@ -20,15 +20,17 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 % SOFTWARE.
 
-
-\documentclass[10.5pt,a4paper,final,roman]{moderncv} 
+\documentclass[10.5pt,a4paper,final,roman]{moderncv}
 \moderncvstyle{classic}
-\moderncvcolor{blue}  
+\moderncvcolor{blue}
 \usepackage{fontspec}
 \usepackage[utf8]{inputenc}
 \usepackage{pdfpages}
 \usepackage{academicons}
-\usepackage[top=1.5cm,bottom=1.5cm,left=1.6cm,right=1.6cm]{geometry} %scale=.9
+\usepackage{fontawesome}
+%\usepackage{hyperref}
+\usepackage[top=1.5cm,bottom=1.5cm,left=1.6cm,right=1.6cm]{geometry}
+%scale=.9
 \setlength{\hintscolumnwidth}{3.2cm}
 %\setlength{\quotewidth}{0.8\textwidth}}
 \let\originalrecomputecvlengths\recomputecvlengths
@@ -38,140 +40,152 @@
 \nopagenumbers{}
 
 %--- hypenation ---%
-\hyphenpenalty		= 5000
-\tolerance			= 2000
-\emergencystretch	= 10pt
+\hyphenpenalty=5000
+\tolerance=2000
+\emergencystretch=10pt
 
 %--- Personal info ---%
 \name{Francesco}{Ioli}
-\title{\Large{PhD student in Environmental and \\Infrastructure Engineering @ DICA (Polimi)}}
-\address{via Matteotti 45/71}{20044, Arese (MI), Italy}
-%\phone[mobile]{+39 3479275652}
-\email{francesco.ioli@polimi.it}
+\title{\Large{PhD student in Environmental and
+		\\Infrastructure Engineering @ DICA (Polimi)}}
+\extrainfo{Nationality: Italian \\
+	Date of Birth: 03/09/1995}
+\photo[50pt][0.3pt]{img/cv_photo}
 \social[linkedin]{francesco-ioli-640061160}
-\photo[50pt][0.3pt]{img/cv_photo}          
-%\extrainfo{Nationality: Italian \\ Date of Birth: 03/09/1995}            
-%\quote{I am specialized in geomatics with a focus on environmental monitoring with photogrammetric and image-based techniques.}
+\social[github]{franioli}
+\social[researchgate]{Francesco-Ioli}
+\social[googlescholar]{hZkC2UMAAAAJ}
 
+% \quote{I am specialized in geomatics with a focus on environmental monitoring with photogrammetric and image-based techniques.}
 
 \begin{document}
-	% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
-	\makecvtitle{}{}
-	
-	\section{Education and training}
-	\cventry[1mm]{11/2020 -- present}{PhD student in Environmental and Infrastructure Engineering}{\newline Department of Civil and Environmental Engineering, Politecnico di Milano}{(Italy)}{\newline Specialization in geomatics, photogrammetry and image-based monitoring techniques, topography and GIS}{}
-	
-	\cventry[1mm]{2017 -- 2020}{MSc Degree in Environmental and Land Planning Engineering}{\newline Politecnico di Milano}{(Italy)}{Grade 110L/110}{Major in Land Monitoring and Diagnostics. \newline 
-	MSc Thesis: \href{http://doi.org/10.13140/RG.2.2.36679.65446}{\textit{Evaluation of Airborne Image Velocimetry approaches with low-cost UAVs in riverine environments}}. Supervisors: Prof. Livio Pinto (Politecnico di Milano), Dr. Martin Detert (ETH Zürich)}
-	
-	\cventry[1mm]{09/2019 -- 01/2020}{Visiting student for MSc thesis development}{ETH Zürich}{(Switzerland)}{}{}
-	
-	\cventry[1mm]{01/2019 -- 05/2019}{Erasmus exchange}{Aalto University}{Helsinki (Finland)}{}{}
-	
-  	\cventry[1mm]{2014 -- 2017}{BSc Degree in Environmental and Land Planning Engineering}{\newline Politecnico di Milano}{(Italy)}{Grade 102/110}{\textit{Snowpack surveys aimed at hydrological analysis: a case study carried out with UAVs and manual probing measurements on the Belvedere glacier (Macugnaga, Italian Alps)}. Supervisor: Prof. Livio Pinto}
-	
-%	\cventry[1mm]{07/2017}{Summer School \textit{Progettazione e realizzazione di rilevamenti topografici} on the Belvedere Glacier}{DICA, Politecnico di Milano}{(Italy)}{}{}	
-	
-	\cventry[1mm]{2009 -- 2014}{High school}{Liceo Scientifico Falcone e Borsellino}{Arese (Italy)}{Grade 92/100}{}
-	
-	\section{Working experience}	
-	% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
-	
-	\cventry{Fall 2021 -- 2022}{Teaching assistant}{\normalfont{Courses of} \textit{Trattamento delle Osservazioni}
-		\normalfont{(teacher: Prof. B.~Betti)} and 
-		\textit{Progettazione di Sistemi Informativi Territoriali}
-		\normalfont{(teacher: Prof. F.~Migliaccio)}}{}{\textit{Politecnico di Milano}}{}	
-	
-	\cventry{26 -- 30/07/2021}{Tutoring}{\normalfont{Summer School} \textit{Design and execution of topographic surveys for land monitoring} at the Belvedere Glacier (Macugnaga\textendash Italian Alps)}{\textit{Passion in Action} course for BSc and MSc students}{\textit{Politecnico di Milano}}{}	
-		
-	\cventry{Spring 2020 -- 2021}{Teaching assistant}{\normalfont{Courses of} \textit{Sistemi Informativi Territoriali}
-		\normalfont{(teacher: Prof. F.~Migliaccio)} and
-		\textit{Tecniche di rilievo e modellazione 3D per l'architettura} \normalfont{(teacher: Prof. L.~Pinto)}}{}{\textit{Politecnico di Milano}}{}	
 
-	\cventry{Fall 2020 -- 2021}{Teaching assistant}{\normalfont{Course of} \textit{Trattamento delle Osservazioni}
-	\normalfont{(teacher: Prof. B.~Betti)}}{}{\textit{Politecnico di Milano}}{}	
-			
-	\cventry[1mm]{06/2020--10/2020}{Internship}{Department of Civil and Environmental Engineering, Section of Geodesy and Geomatics, Politecnico di Milano}{}{Supervisor: Prof. L.~Pinto}{}
-	
-	\cventry{Spring 2019 -- 2020}{Tutoring}{\normalfont{Course of} \textit{Tecniche di rilievo e modellazione 3D per l'architettura} \normalfont (teacher: Prof. L.~Pinto)}{}{\textit{Politecnico di Milano}}{}
-	
-	\section{Pubblications and Oral Presentations}	
-	\cvline{2022}{Ioli, F., Bianchi, A., Cina, A., De Michele, C., Maschio, P., Passoni, D., Pinto, L., 2022. 
-		\href{https://doi.org/10.3390/rs14010028}{Mid-Term Monitoring of Glacier’s Variations with UAVs: The Example of the Belvedere Glacier}. \textit{Remote Sensing} 14, 28}	
-	
-	\cvline{2021}{De Gaetani, C.I., Ioli, F., Pinto, L., 2021. 
-		\href{https://doi.org/10.3390/rs13183787}{Aerial and UAV Images for Photogrammetric Analysis of Belvedere Glacier Evolution in the Period 1977–2019}. \textit{Remote Sensing} 13, 3787.}	
-	
-	\cvline{2021}{Ioli, F., Pinto, L., and Ferrario, F., 2021.
-		\href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-25-2021}{Low-cost Assisted Aerial Triangulation for Sub-decimetric Accuracy with non-RTK UAVs}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021, 25–32}	
-	
-	\cvline{2021}{Rossi, L., Ioli, F., Capizzi, E., Pinto, L., and Reguzzoni, M., 2021. 
-		\href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-61-2021}{Improving UAV Telemtry Positioning for Direct Photogrammetry}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021, 61–68.}
-	
-	\cvline{2020}{Ioli, F., Pinto, L., Passoni, D., Nova, V., Detert, M., 2020.
-		 \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2020-597-2020}{Evaluation of Airborne Image Velocimetry approaches using low-cost UAVs in riverine environments}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} Vol.XLIII-B2-2020, 597–604.}
-	
-	\cvline{23/03/2018}{Presentation of the BSc thesis at DRONITALY 2018 - Working with Drones, Milan}
+% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
+\makecvtitle{}{}
 
-	\section{Languages}
-	\cvitemwithcomment{Italian}{Mother tongue}{}
-	\cvitemwithcomment{English}{C1}{IELTS \normalfont certificate (19/07/2018) - British Council}
-	
-	\section{Technical skills}
-	\cvdoubleitem{Programming}{Matlab, Python, R}{Photogrammetry}{Agisoft Metashape, PhotoModeler, CloudCompare, MeshLab}
-	\cvdoubleitem{GIS}{QGIS, ESRI~ArcGIS Pro \& ArcGIS Desktop, ENVI}{GNSS post-processing}{Leica Infinity \& Leica Geo Office, RTKLIB}
-	\cvdoubleitem{CAD \& 3D modelling}{AutoCAD, ReCap, Autodesk Fusion 360, Rhino}{Image processing}{Adobe Photoshop \& Lightroom, GIMP, RawTherapee, Inkscape}
-	\cvdoubleitem{UAVs}{UgCS, Mission Planner}{OS}{Windows, Linux OS (Debian)}
+\section{Education and training}
 
-	\section{Additional information}
+% \cventry[1mm]{11/2020 -- present}{PhD student in Environmental and Infrastructure Engineering}{\newline Department of Civil and Environmental Engineering (DICA), Politecnico di Milano}{\newline Specialization in geomatics, photogrammetry and image-based monitoring techniques, topography and GIS}{}
 
-	\subsection{Professional qualification}
-	\cvline{07/2020}{\textit{Esame di Stato} for Civil and  Environmental Engineers}
-	\vspace{2mm}
-	
-	\subsection{Licences}		
-	\cvitem{Driving license}{B}	
-	\cvitem{UAS license}{EASA A2 Open Category, with license for critical standard scenarios}
-	\vspace{2mm}				
-	
-	\subsection{Volunteer experiences}
-	\cvline{2017--2021}{Scout chief: children's educator in the Italian Scout association \textit{AGESCI}}
-	\cvline{2016--2017}{Volunteer for \textit{Operazione Mato Grosso} (charity organization)}
-	\cvline{2012--2016}{Volunteer for \textit{Libera. Associazioni, Nomi e Numeri contro le mafie}}	
-	\vspace{2mm}
-	
-	%	\vspace{2mm}	
-	%	\subsection{Social skills and competences }
-	%	\cvline{}{Thanks to two experiences abroad in different countries, I am open and able to adapt to multicultural and multilanguage working environment}		
-	
+\cventry[1mm]{2017 -- 2020}{MSc Degree in Environmental and
+	Land Planning Engineering}{\newline Politecnico di Milano}{(Italy)}{Grade
+	110L/110}{Major in Land Monitoring and Diagnostics. MSc	Thesis: \href{http://doi.org/10.13140/RG.2.2.36679.65446}{\textit{Evaluation of Airborne Image Velocimetry approaches with low-cost UAVs in riverine environments}}.
+}
+
+\cventry[1mm]{09/2019 -- 01/2020}{Visiting student for MSc thesis development}{ETH
+	Zürich}{(Switzerland)}{}{}
+
+\cventry[1mm]{01/2019 -- 05/2019}{Erasmus exchange}{Aalto University}{Helsinki (Finland)}{}{}
+
+\cventry[1mm]{2014 -- 2017}{BSc Degree in Environmental and Land Planning
+	Engineering}{\newline Politecnico di Milano}{}{Grade 102/110}{\textit{Snowpack surveys aimed at hydrological analysis: a case study carried out with UAVs and manual probing measurements on the Belvedere glacier (Macugnaga, Italian Alps)}.
+}
+
+\section{Working
+  experience}
+% usage: \cventry[spacing]{years}{degree/job title}{institution/employer}{localization}{optionnal: grade/...}{optional: comment/job description}
+
+\cventry[1mm]{2021 -- 2022}{Teaching assistant}{Politecnico di Milano}{}{
+	Courses of: \textit{Trattamento delle Osservazini (Statistics),
+	Sistemi Informativi Territoriali (GIS),Tecniche di rilievo e modellazione 3D per l'architettura (3D modelling for architecture)}
+}{}
+
+% \cventry{Fall 2021 -- 2022}{Teaching assistant}{\normalfont{Courses of} \textit{Trattamento delle Osservazioni}} and 
+% 	\textit{Progettazione di Sistemi Informativi Territoriali}{}{\textit{Politecnico di Milano}}{}	
+
+% \cventry{26 -- 30/07/2021}{Tutoring}{\normalfont{Summer School} \textit{Design and execution of topographic surveys for land monitoring} at the Belvedere Glacier (Macugnaga\textendash Italian Alps)}{}{\textit{Politecnico di Milano}}{}	
+
+% \cventry{Spring 2020 -- 2021}{Teaching assistant}{\normalfont{Courses of} \textit{Sistemi Informativi Territoriali}
+% 	\normalfont{(teacher: Prof. F.~Migliaccio)} and
+% 	\textit{Tecniche di rilievo e modellazione 3D per l'architettura} \normalfont{(teacher: Prof. L.~Pinto)}}{}{\textit{Politecnico di Milano}}{}	
+
+% \cventry{Fall 2020 -- 2021}{Teaching assistant}{\normalfont{Course of} \textit{Trattamento delle Osservazioni}\normalfont{(teacher: Prof. B.~Betti)}}{}{\textit{Politecnico di Milano}}{}	
+
+\cventry[1mm]{06/2020--10/2020}{Internship}{Department of Civil and
+	Environmental Engineering, Section of Geodesy and Geomatics, Politecnico di
+	Milano}{}{Supervisor: Prof. L.~Pinto}{}
+
+\section{Skills}
+
+\cvdoubleitem{Programming}{Matlab, Python, R}{Photogrammetry}{Agisoft
+	Metashape, PhotoModeler, CloudCompare, MeshLab}
+
+\cvdoubleitem{GIS}{QGIS, ESRI~ArcGIS Pro \& ArcGIS Desktop, ENVI}{GNSS
+	post-processing}{Leica Infinity \& Leica Geo Office, RTKLIB}
+
+\cvdoubleitem{CAD \& 3D modelling}{AutoCAD, ReCap, Autodesk Fusion 360,
+	Rhino}{Image processing}{Adobe Photoshop \& Lightroom, GIMP, RawTherapee,
+	Inkscape}
+\cvdoubleitem{UAVs}{UgCS, Mission Planner}{OS}{Windows, Linux
+	OS (Debian)}
+
+
+\section{Languages}
+\cvitemwithcomment{Italian}{Mother tongue}{}
+
+\cvitemwithcomment{English}{C1}{IELTS \normalfont certificate (19/07/2018) -
+	British Council}
+
+\section{Main pubblications}
+\cvline{2022}{Ioli,	F., Bianchi, A., Cina, A., De Michele, C., Maschio, P., Passoni, D., Pinto, L.,	2022. \href{https://doi.org/10.3390/rs14010028}{Mid-Term Monitoring of Glacier’s Variations with UAVs: The Example of the Belvedere Glacier}.\textit{Remote Sensing} 14, 28}
+
+\cvline{2021}{De Gaetani, C.I., Ioli, F., Pinto, L., 2021.\href{https://doi.org/10.3390/rs13183787}{Aerial and UAV Images for Photogrammetric Analysis of Belvedere Glacier Evolution in the Period 1977–2019}. \textit{Remote Sensing} 13, 3787.}
+
+\cvline{2021}{Ioli, F., Pinto, L., and Ferrario, F., 2021. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-25-2021}{Low-cost Assisted Aerial Triangulation for Sub-decimetric Accuracy with non-RTK UAVs}.\textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021, 25–32}
+
+%\cvline{2021}{Rossi, L., Ioli, F., Capizzi, E., Pinto, L., and Reguzzoni, M., 2021. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-61-2021}{Improving UAV Telemtry Positioning for Direct Photogrammetry}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021, 61–68.}
+
+\cvline{2020}{Ioli, F., Pinto, L., Passoni, D., Nova, V., Detert, M., 2020.\href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2020-597-2020}{Evaluation of Airborne Image Velocimetry approaches using low-cost UAVs in riverine Environments}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} Vol.XLIII-B2-2020, 597–604.}
+
+\cvline{}{For a complete and up-to-date publication list, visit \href{ https://scholar.google.com/citations?user=hZkC2UMAAAAJ}{Francesco Ioli Scholar page}.}
+
+
+\section{Additional information}
+
+\subsection{Professional qualification}
+\cvline{07/2020}{\textit{Esame
+		di Stato} for Civil and  Environmental Engineers}
+\vspace{2mm}
+
+\subsection{Licences}
+\cvitem{Driving license}{B}
+
+\cvitem{UAS license}{EASA A2 Open Category, with license for critical
+	standard scenarios}
+\vspace{2mm}
+
+\subsection{Volunteer experiences}
+\cvline{2017--present}{Scout
+	chief: children's educator in the Italian Scout association \textit{AGESCI}}
+
+\cvline{2016--2017}{Volunteer for \textit{Operazione Mato Grosso} (charity
+	organization)}
+\cvline{2012--2016}{Volunteer for \textit{Libera.
+		Associazioni, Nomi e Numeri contro le mafie}}
+\vspace{2mm}
+
+%	\vspace{2mm}	
+%	\subsection{Social skills and competences }
+%	\cvline{}{Thanks to two experiences abroad in different countries, I am open and able to adapt to multicultural and multilanguage working environment}		
+
 %	\subsection{Personal interests}
 %	\cvline{}{I am an amateur photographer.
 %		I enjoy doing several outdoor activities such as hiking, climbing, ski mountaineering and cycling}	
-		
+
 %	\section{Annexes}
 
+\vspace{1.5cm}
+\today		
 
-	\vspace{1.5cm}
-	\today		
-			
-	\emptysection{}\closesection
-	\vfill
-	\begin{center}
-		\textit{\small According to Regulation of the European Parliament 679/2016, I hereby express my consent to process and use my data provided in this CV and application for recruiting purposes.}
-% 		\vspace{0.5em}	
-%		\textit{\small Autorizzo la pubblicazione del Curriculum Vitae sul sito istituzionale del Politecnico di Milano (sez. Amministrazione Trasparente) in ottemperanza al D. Lgs n. 33 del 14 marzo 2013 (e s.m.i.)}
-	\end{center}	
+\emptysection{}\closesection
+\vfill
+\begin{center}
 
+	\textit{\small According to Regulation of the European Parliament
+		679/2016, I hereby express my consent to process and use my data provided in
+		this CV and application for recruiting purposes.}
+	% 		\vspace{0.5em}	
+	%		\textit{\small Autorizzo la pubblicazione del Curriculum Vitae sul sito istituzionale del Politecnico di Milano (sez. Amministrazione Trasparente) in ottemperanza al D. Lgs n. 33 del 14 marzo 2013 (e s.m.i.)}
+\end{center}
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
