@@ -1,17 +1,17 @@
 {
   "latex-workshop.latex.tools": [
     // Compilation tools and commands
-    {
-      "name": "xelatex",
-      "command": "xelatex",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        // "-pdf",
-        "%DOCFILE%"
-      ]
-    },
+    // {
+    //   "name": "xelatex",
+    //   "command": "xelatex",
+    //   "args": [
+    //     "-synctex=1",
+    //     "-interaction=nonstopmode",
+    //     "-file-line-error",
+    //     // "-pdf",
+    //     "%DOCFILE%"
+    //   ]
+    // },
     {
       "name": "pdflatex",
       "command": "pdflatex",
@@ -21,31 +21,31 @@
         "-file-line-error",
         "%DOCFILE%"
       ]
-    },
-    {
-      "name": "bibtex",
-      "command": "bibtex",
-      "args": ["%DOCFILE%"]
     }
+    // {
+    //   "name": "bibtex",
+    //   "command": "bibtex",
+    //   "args": ["%DOCFILE%"]
+    // }
   ],
 
   "latex-workshop.latex.recipes": [
+    // {
+    //   "name": "xelatex",
+    //   "tools": ["xelatex"]
+    // },
     {
-      "name": "xelatex 🔃",
-      "tools": ["xelatex"]
-    },
-    {
-      "name": "pdflatex 🔃",
+      "name": "pdflatex",
       "tools": ["pdflatex"]
-    },
-    {
-      "name": "xelatex➞bibtex➞xelatex.2x 🔃",
-      "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
-    },
-    {
-      "name": "pdflatex➞bibtex➞pdflatex.2x 🔃",
-      "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
     }
+    // {
+    //   "name": "xelatex➞bibtex➞xelatex.2x 🔃",
+    //   "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+    // },
+    // {
+    //   "name": "pdflatex➞bibtex➞pdflatex.2x 🔃",
+    //   "tools": ["pdflatex", "bibtex", "pdflatex", "pdflatex"]
+    // }
   ],
   "editor.formatOnSave": false,
   "editor.formatOnType": false,

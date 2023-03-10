@@ -112,7 +112,8 @@
 %extended aligning of tabular cells
 \usepackage{array}
 
-\newcolumntype{x}[1]{{\raggedleft\hspace{0pt}}p{#1}}%
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
 
 
 %-------------------------------------------------------------------------------
@@ -247,17 +248,17 @@
 }
 
 % Same as \cvevent, but without the institution field and more compact
-\newcommand{\cvline}[2]
+\newcommand{\cvline}[3]
 {
 \vspace{4pt}
-	\begin{tabular*}{1\mpwidth}{p{0.8\mpwidth}  x{0.18\mpwidth}}
- 	\textcolor{black}{\cvlist {#2}} & \textcolor{bgcol}{#1} 
+	\begin{tabular*}{1\mpwidth}{p{0.55\mpwidth}  x{0.42\mpwidth}}
+ 	\textcolor{black}{\textbf{#2}} & \textcolor{bgcol}{#1} 
 	\end{tabular*}
 \vspace{0pt}
 \textcolor{softcol}{\hrule}
-% \vspace{4pt}
-	
-% \vspace{-4pt}
+\vspace{4pt}
+	\cvlist {#3}
+\vspace{-4pt}
 }
 
 % formats a list of strings with variable length for use in `\cvevent`
@@ -309,8 +310,7 @@
 %------------------------------------------------------------------------------ 
 
 % at this point we simplify our icon-embedding by simply referring to a set of png images.
-% if you find a good way of including svg without conflicting with other packages you can
-% replace this part
+% if you find a good way of including svg without conflicting with other packages you can replace this part
 \newcommand{\icon}[3]{
 	\makebox(#2, #2){\textcolor{#3}{\csname fa#1\endcsname}}
 }	%icon shortcut
@@ -343,149 +343,144 @@
 %
 %============================================================================%
 \begin{document}
-\fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.80\linewidth}
+\fcolorbox{white}{white}{
+	
+\begin{minipage}[c][0.95\textheight][t]{0.80\linewidth}
 
 
-%-------------------------------------------------------------------------------
-%	TITLE HEADLINE
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
+	%	TITLE HEADLINE
+	%-------------------------------------------------------------------------------
 
-\vspace{-3pt}
-% use this for multiple words like working titles etc.
-%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\uppercase{M.Sc. Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
-% \large{ \textcolor{white}{{JS Fullstack Engineer}}}}
-%}}
+	\vspace{-3pt}
+	% use this for multiple words like working titles etc.
+	%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\uppercase{M.Sc. Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
+	% \large{ \textcolor{white}{{JS Fullstack Engineer}}}}
+	%}}
 
-% use this for single words, e.g. CV or RESUME etc.
-\colorbox{bgcol}{\makebox[\mpwidth][c]{\Large{\textcolor{white}{\uppercase{Francesco Ioli}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \RESUME{\textcolor{white}{\uppercase{CV}} } }}
+	% use this for single words, e.g. CV or RESUME etc.
+	\colorbox{bgcol}{\makebox[\mpwidth][c]{\Large{\textcolor{white}{\uppercase{Francesco Ioli}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \RESUME{\textcolor{white}{\uppercase{CV}} } }}
 
-%-------------------------------------------------------------------------------
-%	HEADER IMAGE
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
+	%	HEADER IMAGE
+	%-------------------------------------------------------------------------------
 
 
-%\hspace{-1.6cm}
-%\includegraphics[trim= 0 250 0 270,clip,width=1\linewidth+3.1cm]{myfoto.jpg}	%trimming relative to image size!
-\includegraphics[trim= 150 150 0 60, clip,width=\linewidth]{img/img_montagna.jpg}	%trimming relative to image size
-% [trim={left bottom right top},clip]
+	%\hspace{-1.6cm}
+	%\includegraphics[trim= 0 250 0 270,clip,width=1\linewidth+3.1cm]{myfoto.jpg}	%trimming relative to image size!
+	\includegraphics[trim= 200 100 0 50, clip,width=\linewidth]{img/img_montagna.jpg}	%trimming relative to image size
+	% [trim={left bottom right top},clip]
 
-%-------------------------------------------------------------------------------
-%	SUMMARY
-%-------------------------------------------------------------------------------
-\transparent{0.85}%
-\vspace{-100pt}
-\hspace{0.5\linewidth}
-\colorbox{bgcol}{
-	\parbox{0.45\linewidth}{
-		\transparent{1}%
-		\begin{center}
-		\larrow{sectcol}\larrow{sectcol}\textcolor{white}{I am a PhD student in Geomatics with focus on photogrammetry and 3D reconstruction. I'm working on low-cost stereo-cameras and UAV SfM for glacier monitoring. 
-		I am a UAV pilot, licensed to operate in critical scenarios.}
-		\end{center}
+	%-------------------------------------------------------------------------------
+	%	SUMMARY
+	%-------------------------------------------------------------------------------
+	\transparent{0.85}%
+	\vspace{-130pt}
+	\hspace{0.4\linewidth}
+	\colorbox{bgcol}{
+		\parbox{0.5\linewidth}{
+			\transparent{1}%
+			\begin{center}
+			\larrow{sectcol}\larrow{sectcol}\textcolor{white}{I am a PhD student in Geomatics. My work focuses on photogrammetry and SfM for glacier monitoring. I also work on UAV-photogrammetry for structural health assessment, with a focus on crack detection on concrete bridges. I am a UAV pilot, licensed to operate in critical scenarios.}
+			\end{center}
+		}
 	}
-}
-\vspace{30pt}
+	\vspace{60pt}
 
-%============================================================================%
-%
-%	CV SECTIONS AND EVENTS (MAIN CONTENT)
-%
-%============================================================================%
+	%============================================================================%
+	%
+	%	CV SECTIONS AND EVENTS (MAIN CONTENT)
+	%
+	%============================================================================%
 
-%-------------------------------------------------------------------------------
-%	STATUS
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
+	%	STATUS
+	%-------------------------------------------------------------------------------
 
-% \cvsection{Status}
+	\cvsection{Status}
 
-% PhD student in Geomatic, working on photogrammetry for glacier monitoring.
+	% PhD student in Geomatic, working on photogrammetry for glacier monitoring.
 
-% \vspace{12pt}
+	\vspace{12pt}
 
-%-------------------------------------------------------------------------------
-%	EXPERIENCE
-%-------------------------------------------------------------------------------
+	%-------------------------------------------------------------------------------
+	%	EXPERIENCE
+	%-------------------------------------------------------------------------------
 
-\cvsection{Experience}
-%\textcolor{softcol}{\hrule}
+	\cvsection{Experience}
+	%\textcolor{softcol}{\hrule}
 
-%
-\cvevent{2020 - now}{PhD Student}{
-	\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano, DICA}}
-	{My work focuses on photogrammetry and SfM for glacier monitoring. I work on UAV-photogrammetry for structural health assessment{,} with a focus on crack detection on concrete bridges.
-	}\\[-8pt]
-
-%
-\cvevent{2022}{Visiting PhD student}{
-	\href{https://www.itc.nl/}{University of Twente, ITC}}{
-	Developing a wide-baseline stereo matching workflow with Deep Learning for 4D monitoring of an alpine glacier by using low-cost time-lapse cameras.
-	}\\[-8pt]
-
-%
-\cvevent{2020 - now}{Teaching assistant}{
-	\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano}}{
-	\textit{Course of Trattamento delle Osservazini} (Statistics),
-	\textit{Course of Sistemi Informativi Territoriali} (GIS),
-	\textit{Course of Tecniche di rilievo e modellazione 3D per l'architettura} (3D modelling for architecture).
-	}\\[-14pt]
-
-%
-\cvevent{2021 - 2022}{Tutoring}{\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano}}{Tutor for the Summer School \textit{Design and Execution of Topographic Surveys for Land Monitoring} at the Belvedere Glacier (Italian Alps) aimed at introducing BSc and MSc students to topographic fielworks in mountain environments.
-}\\[-8pt]
-
-%
-\cvevent{2020}{Internship}{Politecnico di Milano, \href{https://labmgf.dica.polimi.it/}{LabMGF}}{Conducted fielworks for surveying of bridges with UAV-photogrammetry{,} GNSS{,} Laser Scanner and Total station{,} as well as producing tecnical drawing from photogrammetric point clouds.
-}
-
-\vspace{12pt}
-
-%-------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%-------------------------------------------------------------------------------
-\cvsection{Education}
-
-%
-\cvevent{2017 - 2020}{MSc in Environmental and
-Land Planning Engineering}{Politecnico di Milano}{Major in Land Monitoring and Diagnostics. Grade 110L/110.}
-
-%
-\cvevent{2019 - 2020}{Visiting student for MSc thesis development}{\href{https://vaw.ethz.ch/en/}{ETH Zürich, VAW}}{
-	MSc	Thesis: \href{http://doi.org/10.13140/RG.2.2.36679.65446}{
-	\textit{Evaluation of Airborne Image Velocimetry approaches with low-cost UAVs in riverine environments}. Supervisors: Prof. Livio Pinto{,} Dr. Martin
-	Detert.}
-}
+	%
+	\cvevent{2020 - now}{PhD Student}{
+		\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano}}
+		{My work focuses on photogrammetry and SfM for glacier monitoring. I work on UAV-photogrammetry for structural health assessment{,} with a focus on crack detection on concrete bridges.
+		}
 
 
-%
-\cvevent{2019}{Erasmus exchange}{Aalto University (Helsinki)}{}
+	%
+	\cvevent{2022}{Visiting PhD student}{
+		\href{https://www.itc.nl/}{ITC, University of Twente}}{
+		Developing wide-baseline stereo matching techniques with deep learning for 3d monitoring of an alpine glacier{,} by using low-cost time-lapse cameras.
+		}
 
 
-%
-\cvevent{2014 - 2017}{BSc in Environmental and Land Planning
-Engineering}{Politecnico di Milano}{
-	BSc	Thesis: \textit{Snowpack surveys aimed at hydrological analysis: a case study carried out with UAVs and manual probing measurements on the Belvedere glacier (Macugnaga, Italian Alps)}. Grade 102/110.
-}
+	%
+	\cvevent{2020 - now}{Teaching assistant, courses of:}{
+		\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano}}{
+		\textit{Trattamento delle Osservazini} (Statistics),
+		\textit{Sistemi Informativi Territoriali} (GIS),
+		\textit{Tecniche di rilievo e modellazione 3D per l'architettura} (3D modelling for architecture)}
 
-\vspace{12pt}
-
-
-%-------------------------------------------------------------------------------
-%	PROJECTS SECTION
-%-------------------------------------------------------------------------------
-\cvsection{Projects}
-
-\cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
-
-\cvlist{\href{https://www.researchgate.net/project/Photogrammetric-glacier-monitoring}{Long-term photogrammetric monitoring of the deris-covered Belvedere Glacier (Italian Alps)}}
-
-\cvlist{\href{https://www.researchgate.net/project/UAV-photogrammetry-for-structural-3D-reconstruction-and-crack-assessment}{UAV photogrammetry for structural 3D reconstruction and crack assessment}}
-
-\vspace{12pt}
+	%
+	\cvevent{2020}{Internship}{Politecnico di Milano, \href{https://labmgf.dica.polimi.it/}{LabMGF}}{}
 
 
-%-------------------------------------------------------------------------------
-%	METADATA SECTION
-%-------------------------------------------------------------------------------
+	\vspace{12pt}
+
+	%-------------------------------------------------------------------------------
+	%	EDUCATION SECTION
+	%-------------------------------------------------------------------------------
+	\cvsection{Education}
+
+	%
+	\cvevent{2017 - 2020}{MSc in Environmental and
+	Land Planning Engineering}{Politecnico di Milano}{Major in Land Monitoring and Diagnostics. Grade 110L/110.}
+
+	%
+	\cvevent{2019}{Visiting student for MSc thesis development}{ETH
+	Zürich}{
+		MSc	Thesis: \href{http://doi.org/10.13140/RG.2.2.36679.65446}{
+		\textit{Evaluation of Airborne Image Velocimetry approaches with low-cost UAVs in riverine environments}}
+	}
+
+
+	%
+	\cvevent{2019}{Erasmus exchange}{Aalto University (Helsinki)}{}
+
+
+	%
+	\cvevent{2014 - 2017}{BSc in Environmental and Land Planning
+	Engineering}{Politecnico di Milano}{
+		BSc	Thesis: \textit{Snowpack surveys aimed at hydrological analysis: a case study carried out with UAVs and manual probing measurements on the Belvedere glacier (Macugnaga, Italian Alps)}. Grade 102/110.
+	}
+
+	\vspace{12pt}
+
+
+	%-------------------------------------------------------------------------------
+	%	PROJECTS SECTION
+	%-------------------------------------------------------------------------------
+	\cvsection{Projects}
+
+	\cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
+
+	\vspace{12pt}
+
+
+
+	%-------------------------------------------------------------------------------
+	%	METADATA SECTION
+	%-------------------------------------------------------------------------------
 
 \end{minipage}}%
 \fcolorbox{white}{sectcol}{\begin{minipage}[c][0.95\textheight][t]{0.21\linewidth}
@@ -500,7 +495,7 @@ Engineering}{Politecnico di Milano}{
 	\iconhref{Linkedin}{12}{francesco-ioli}{https://www.linkedin.com/in/francesco-ioli-640061160/}{white}\\[4pt]
     \iconhref{Github}{12}{github.com/franioli}{https://github.com/franioli}{white}\\[4pt]
     \iconhref{Twitter}{12}{@francescoioli}{https://twitter.com/francescoioli}{white}\\[4pt]
-    \iconhref{GraduationCap}{12}{Scholar: Francesco Ioli}{https://scholar.google.com/citations?user=hZkC2UMAAAAJ}{white}\\[4pt]
+    \iconhref{GraduationCap}{12}{Francesco Ioli}{https://scholar.google.com/citations?user=hZkC2UMAAAAJ}{white}\\[4pt]
 
 \end{metasection}
 
@@ -518,19 +513,17 @@ Engineering}{Politecnico di Milano}{
 
 % \icontext{Code}{12}{Coding}{white}\\
 % \icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{complcol}\icon{Star}{12}{white}\icon{Star}{12}{white}\\[4pt]
-
-
 % \end{metasection}
 
 
 \begin{metasection}{Programming}
 
-	\textcolor{white}{
-		\icontext{Code}{12}{Python}{white}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\\[4pt]
-		\icontext{Code}{12}{Matlab}{white}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{white} \\[4pt]
-		\icontext{Code}{12}{C++}{white} \icon{Star}{8}{complcol}\icon{Star}{8}{white}\icon{Star}{8}{white}\icon{Star}{8}{white}  \\[4pt]
-		\icontext{CodeFork}{12}{Git}{white} \icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{complcol}\icon{Star}{8}{white} \\[4pt]
-	}
+\textcolor{white}{
+	\icontext{Code}{12}{Python}{white} \icon{Star}{9}{complcol}\icon{Star}{9}{complcol}\icon{Star}{9}{complcol} \\[4pt]
+	\icontext{Code}{12}{Matlab}{white} \icon{Star}{9}{complcol}\icon{Star}{9}{complcol}\icon{Star}{9}{complcol} \\[4pt]
+	\icontext{Code}{12}{C++}{white} \icon{Star}{9}{complcol}\icon{Star}{9}{white}\icon{Star}{9}{white}  \\[4pt]
+	\icontext{CodeFork}{12}{Git}{white} \icon{Star}{9}{complcol}\icon{Star}{9}{complcol}\icon{Star}{9}{complcol} \\[4pt]
+}
 \end{metasection}
 
 \begin{metasection}{Photogrammetry}
@@ -543,24 +536,24 @@ Engineering}{Politecnico di Milano}{
 		}
 	\end{metasection}
 
+
 \begin{metasection}{Tools}
 
-	\textcolor{white}{
-		\icontext{MapO}{10}{QGIS, ESRI ArcGIS}{white} \\[2pt]
-		\icontext{Globe}{10}{Leica Infinity, rtklib}{white} \\[2pt]
-		\icontext{PaintBrush}{10}{Photoshop, Lightrooom}{white} \\[2pt]
-		\icontext{PaintBrush}{10}{GIMP, Inkscape}{white} \\[2pt]
-		\icontext{PencilSquareO}{10}{AutoCAD, ReCap}{white} \\[2pt]
-		% \icontext{Cube}{10}{Autodesk Fusion360}{white} \\[2pt]
-		\icontext{FileTextO}{10}{Latex}{white} \\[2pt]
-		\icontext{Terminal}{10}{Terminal}{white} \\[2pt]
-		\icontext{Linux}{10}{Proxmox VE, TrueNas}{white} \\[2pt]
-	}
+\textcolor{white}{
+	\icontext{MapO}{10}{QGIS, ESRI ArcGIS}{white} \\[2pt]
+	\icontext{MapMarker}{10}{Leica Infinity, rtklib}{white} \\[2pt]
+	\icontext{PaintBrush}{10}{Photoshop, Lightrooom}{white} \\[2pt]
+	\icontext{PaintBrush}{10}{GIMP, Inkscape}{white} \\[2pt]
+	\icontext{PencilSquareO}{10}{AutoCAD, ReCap}{white} \\[2pt]
+	\icontext{Cube}{10}{Autodesk Fusion360}{white} \\[2pt]
+	\icontext{Terminal}{10}{Terminal}{white} \\[2pt]
+	\icontext{Terminal}{10}{Proxmox VE, TrueNas}{white} \\[2pt]
+}
 \end{metasection}
 
 \begin{metasection}{Operating Systems}
 
-	\textcolor{white}{\LARGE{\icon{Linux}{16}{white} \icon{Windows}{16}{white}}}
+\textcolor{white}{\LARGE{\icon{Linux}{16}{white} \icon{Windows}{16}{white}}}
 \end{metasection}
 
 
@@ -571,11 +564,10 @@ Engineering}{Politecnico di Milano}{
 \end{metasection}
 
 
-
 \begin{metasection}{Activities}
 
 	\textcolor{white}{\LARGE{\customicon{img/mountain.png}{20}{white} \icon{Camera}{16}{white} \icon{Bicycle}{16}{white}}}
-\end{metasection}
+	\end{metasection}
 
 %-------------------------------------------------------------------------------
 %	QR CODE (optional)
@@ -607,31 +599,21 @@ Engineering}{Politecnico di Milano}{
 %-------------------------------------------------------------------------------
 %	SKILLS SECTION
 %-------------------------------------------------------------------------------
-\cvsection{Skills}
+% \cvsection{Skills}
 
-\cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
+% \cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
 
 \vspace{12pt}
 
 \cvsection{Pubblications}
 
-\cvlist{Ioli{,}	F.{,} Bianchi{,} A.{,} Cina{,} A.{,} De Michele{,} C.{,} Maschio{,} P.{,} Passoni{,} D.{,} Pinto{,} L.{,}	2022. \href{https://doi.org/10.3390/rs14010028}{Mid-Term Monitoring of Glacier’s Variations with  UAVs: The Example of the Belvedere Glacier}. \textit{Remote Sensing} 14{,} 28}
-
-\cvlist{Gaspari{,} F.{,} Ioli{,} F.{,} Barbieri{,} F.{,} Belcore{,} E.{,}Pinto{,} L.{,} 2022. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2022-995-2022}{Integration of UAV-Lidar and UAV-photgrammetry for Infrastructure Monitoring and Bridge Assessment}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2022{,} 995–1002}
-
-\cvlist{Ioli{,}	F.{,} Pinto{,} A.{,} Pinto{,} L.{,} 2022. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2022-1025-2022}{UAV-Photogrammetry for Metric Evaluation of Concrete Bridge Cracks}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2022{,} 1025–1032}
-
-\cvlist{De Gaetani{,} C.I.{,} Ioli{,} F.{,} Pinto{,} L.{,} 2021. \href{https://doi.org/10.3390/rs13183787}{Aerial and UAV Images for Photogrammetric Analysis of Belvedere Glacier Evolution in the Period 1977–2019}. \textit{Remote Sensing} 13{,} 3787.}
-
-\cvlist{Ioli{,} F.{,} Pinto{,} L.{,} and Ferrario{,} F.{,} 2021. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-25-2021}{Low-cost Assisted Aerial Triangulation for Sub-decimetric Accuracy with non-RTK UAVs}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021{,} 25–32}
-
+\cvlist{Ioli{,}	F.{,} Bianchi{,} A.{,} Cina{,} A.{,} De Michele{,} C.{,} Maschio{,} P.{,} Passoni{,} D.{,} Pinto{,} L.{,}	2022. \href{https://doi.org/10.3390/rs14010028}{Mid-Term Monitoring of Glacier’s Variations with  UAVs: The Example of the Belvedere Glacier}.\textit{Remote Sensing} 14{,} 28}\\[2pt]
+\cvlist{De Gaetani{,} C.I.{,} Ioli{,} F.{,} Pinto{,} L.{,} 2021. \href{https://doi.org/10.3390/rs13183787}{Aerial and UAV Images for Photogrammetric Analysis of Belvedere Glacier Evolution in the Period 1977–2019}. \textit{Remote Sensing} 13{,} 3787.}\\[2pt]
+\cvlist{Ioli{,} F.{,} Pinto{,} L.{,} and Ferrario{,} F.{,} 2021. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-25-2021}{Low-cost Assisted Aerial Triangulation for Sub-decimetric Accuracy with non-RTK UAVs}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021{,} 25–32}\\[2pt]
 % \cvlist{Rossi{,} L.{,} Ioli{,} F.{,} Capizzi{,} E.{,} Pinto{,} L.{,} and Reguzzoni{,} M.{,} 2021. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2021-61-2021}{Improving UAV Telemtry Positioning for Direct Photogrammetry}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2021{,} 61–68.}\\[2pt]
+\cvlist{Ioli{,} F.{,} Pinto{,} L.{,} Passoni{,} D.{,} Nova{,} V.{,} Detert{,} M.{,} 2020. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2020-597-2020}{Evaluation of Airborne Image Velocimetry approaches using low-cost UAVs in riverine Environments}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} Vol.XLIII-B2-2020{,} 597–604.}\\[2pt]
+\cvlist{For a complete and up-to-date publication list{,} visit \href{https://scholar.google.com/citations?user=hZkC2UMAAAAJ}{Francesco Ioli Scholar page}.} \\[2pt]
 
-\cvlist{Ioli{,} F.{,} Pinto{,} L.{,} Passoni{,} D.{,} Nova{,} V.{,} Detert{,} M.{,} 2020. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2020-597-2020}{Evaluation of Airborne Image Velocimetry approaches using low-cost UAVs in riverine Environments}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} Vol.XLIII-B2-2020{,} 597–604.}
-
-\cvlist{For a complete and up-to-date publication list{,} visit \href{https://scholar.google.com/citations?user=hZkC2UMAAAAJ}{Francesco Ioli Scholar page}.}
-
-\vspace{12pt}
 
 \cvsection{Additional information}
 
@@ -639,26 +621,27 @@ Engineering}{Politecnico di Milano}{
 \cvlist{UAS license: EASA A2 Open Category{,} with license for critical standard scenarios}
 \cvlist{Professional qualification: \textit{Esame di Stato} for Civil and  Environmental Engineers}
 
-\vspace{12pt}
-
 \cvsection{Volunteer experience}
 
 \cvline{2017 - now}{Scout
-chief: Children's educator in the Italian Scout association \textit{AGESCI}}
-\cvline{2016 - 2017}{Operazione Mato Grosso: Volunteer for charity organization \textit{Operazione Mato Grosso}}
+chief}{Children's educator in the Italian Scout association \textit{AGESCI}}
+\cvline{2016 - 2017}{Operazione Mato Grosso}{Volunteer for charity organization \textit{Operazione Mato Grosso}}
 \cvline{2012 - 2016}{Libera.
-Associazioni{,} Nomi e Numeri contro le mafie: Volunteer for anti-mafia and civil rights association \textit{Libera}}
+Associazioni, Nomi e Numeri contro le mafie}{Volunteer for anti-mafia and civil rights association \textit{Libera.
+Associazioni, Nomi e Numeri contro le mafie}}
 
 
-% % Closing
-% \null
-% \vspace*{\fill}
-% \begin{center}
-% 	\textit{\small According to Regulation of the European Parliament
-% 		679/2016, I hereby express my consent to process and use my data provided in
-% 		this CV and application for recruiting purposes.}
-% \end{center}
+% Closing
+\null
+\vspace*{\fill}
+\begin{center}
+	\textit{\small According to Regulation of the European Parliament
+		679/2016, I hereby express my consent to process and use my data provided in
+		this CV and application for recruiting purposes.}
+\end{center}
 
+
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{Francesco Ioli - \today}}}\\[-6pt]
 
 
 \end{minipage}}
