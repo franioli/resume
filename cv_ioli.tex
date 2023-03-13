@@ -1,27 +1,3 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2015 Jan Küster
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
-
 %============================================================================%
 %
 %	DOCUMENT DEFINITION
@@ -235,29 +211,26 @@
 %
 \newcommand{\cvevent}[4]
 {
-\vspace{6pt}
-	\begin{tabular*}{1\mpwidth}{p{0.55\mpwidth}  x{0.42\mpwidth}}
- 	\textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{bgcol}{#1} 
-	\end{tabular*}
+	\vspace{6pt}
+		\begin{tabular*}{1\mpwidth}{p{0.55\mpwidth} >{\raggedleft\arraybackslash}p{0.42\mpwidth}}
+			\textcolor{black}{\textbf{#2}} & \textcolor{complcol}{#3}, \textcolor{bgcol}{#1} 
+		\end{tabular*}
 \vspace{0pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
-	\cvlist {#4}
-\vspace{-6pt}
+	\cvlist{#4}
+\vspace{0pt}
 }
 
 % Same as \cvevent, but without the institution field and more compact
 \newcommand{\cvline}[2]
 {
 \vspace{4pt}
-	\begin{tabular*}{1\mpwidth}{p{0.8\mpwidth}  x{0.18\mpwidth}}
- 	\textcolor{black}{\cvlist {#2}} & \textcolor{bgcol}{#1} 
+	\begin{tabular*}{1\mpwidth}{p{0.8\mpwidth} x{0.18\mpwidth}}
+ 	\textcolor{black}{\cvlist {#2}} & \textcolor{bgcol}{	#1} 
 	\end{tabular*}
 \vspace{0pt}
 \textcolor{softcol}{\hrule}
-% \vspace{4pt}
-	
-% \vspace{-4pt}
 }
 
 % formats a list of strings with variable length for use in `\cvevent`
@@ -268,7 +241,7 @@
         \begin{tabular*}
             {1\mpwidth}{p{1\mpwidth}}
             \parbox{1\mpwidth}{\larrow{softcol} \listitem}
-            \vspace{3pt}
+            \vspace{2pt}
         \end{tabular*}
     }
 }
@@ -379,7 +352,8 @@
 	\parbox{0.45\linewidth}{
 		\transparent{1}%
 		\begin{center}
-		\larrow{sectcol}\larrow{sectcol}\textcolor{white}{I am a PhD student in Geomatics with focus on photogrammetry and 3D reconstruction. I'm working on low-cost stereo-cameras and UAV SfM for glacier monitoring. 
+		% \larrow{sectcol}\larrow{sectcol}
+		\textcolor{white}{I am a PhD student in Geomatics with a focus on photogrammetry and 3D reconstruction. I'm working on low-cost stereo-cameras and UAV SfM for glacier monitoring. 
 		I am a UAV pilot, licensed to operate in critical scenarios.}
 		\end{center}
 	}
@@ -412,14 +386,14 @@
 %
 \cvevent{2020 - now}{PhD Student}{
 	\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano, DICA}}
-	{My work focuses on photogrammetry and SfM for glacier monitoring. I work on UAV-photogrammetry for structural health assessment{,} with a focus on crack detection on concrete bridges.
-	}\\[-8pt]
+	{My research focusees on UAV-based and terrestial photogrammetry for land and infrastructure monitoring. I am working on a low-cost image-based system for 4D glacier monitoring (\href{https://github.com/franioli/icepy4d}{ICEpy4D}) and on UAV-photogrammetry for structural health assessment and crack detection on concrete bridges.
+	}
 
 %
 \cvevent{2022}{Visiting PhD student}{
 	\href{https://www.itc.nl/}{University of Twente, ITC}}{
 	Developing a wide-baseline stereo matching workflow with Deep Learning for 4D monitoring of an alpine glacier by using low-cost time-lapse cameras.
-	}\\[-8pt]
+	}
 
 %
 \cvevent{2020 - now}{Teaching assistant}{
@@ -427,11 +401,11 @@
 	\textit{Course of Trattamento delle Osservazini} (Statistics),
 	\textit{Course of Sistemi Informativi Territoriali} (GIS),
 	\textit{Course of Tecniche di rilievo e modellazione 3D per l'architettura} (3D modelling for architecture).
-	}\\[-14pt]
+	}
 
 %
 \cvevent{2021 - 2022}{Tutoring}{\href{https://www.dica.polimi.it/?lang=en}{Politecnico di Milano}}{Tutor for the Summer School \textit{Design and Execution of Topographic Surveys for Land Monitoring} at the Belvedere Glacier (Italian Alps) aimed at introducing BSc and MSc students to topographic fielworks in mountain environments.
-}\\[-8pt]
+}
 
 %
 \cvevent{2020}{Internship}{Politecnico di Milano, \href{https://labmgf.dica.polimi.it/}{LabMGF}}{Conducted fielworks for surveying of bridges with UAV-photogrammetry{,} GNSS{,} Laser Scanner and Total station{,} as well as producing tecnical drawing from photogrammetric point clouds.
@@ -457,7 +431,7 @@ Land Planning Engineering}{Politecnico di Milano}{Major in Land Monitoring and D
 
 
 %
-\cvevent{2019}{Erasmus exchange}{Aalto University (Helsinki)}{}
+\cvevent{2019}{Erasmus exchange}{Aalto University (Helsinki)}{Semester spent abroad in Helsinki (Finland) for studying in an international environment}
 
 
 %
@@ -607,19 +581,19 @@ Engineering}{Politecnico di Milano}{
 %-------------------------------------------------------------------------------
 %	SKILLS SECTION
 %-------------------------------------------------------------------------------
-\cvsection{Skills}
+% \cvsection{Skills}
 
-\cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
+% \cvlist{\href{https://github.com/franioli/icepy4d}{ICEpy4D}: a multi-purpose Python package for 4D Image-based Continuos monitoring of glaciers' Evolution with deep learning SfM and low-cost stereo-cameras}
 
-\vspace{12pt}
+% \vspace{12pt}
 
 \cvsection{Pubblications}
 
 \cvlist{Ioli{,}	F.{,} Bianchi{,} A.{,} Cina{,} A.{,} De Michele{,} C.{,} Maschio{,} P.{,} Passoni{,} D.{,} Pinto{,} L.{,}	2022. \href{https://doi.org/10.3390/rs14010028}{Mid-Term Monitoring of Glacier’s Variations with  UAVs: The Example of the Belvedere Glacier}. \textit{Remote Sensing} 14{,} 28}
 
-\cvlist{Gaspari{,} F.{,} Ioli{,} F.{,} Barbieri{,} F.{,} Belcore{,} E.{,}Pinto{,} L.{,} 2022. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2022-995-2022}{Integration of UAV-Lidar and UAV-photgrammetry for Infrastructure Monitoring and Bridge Assessment}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2022{,} 995–1002}
-
 \cvlist{Ioli{,}	F.{,} Pinto{,} A.{,} Pinto{,} L.{,} 2022. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2022-1025-2022}{UAV-Photogrammetry for Metric Evaluation of Concrete Bridge Cracks}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2022{,} 1025–1032}
+
+\cvlist{Gaspari{,} F.{,} Ioli{,} F.{,} Barbieri{,} F.{,} Belcore{,} E.{,}Pinto{,} L.{,} 2022. \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2022-995-2022}{Integration of UAV-Lidar and UAV-photgrammetry for Infrastructure Monitoring and Bridge Assessment}. \textit{Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci.} XLIII-B2-2022{,} 995–1002}
 
 \cvlist{De Gaetani{,} C.I.{,} Ioli{,} F.{,} Pinto{,} L.{,} 2021. \href{https://doi.org/10.3390/rs13183787}{Aerial and UAV Images for Photogrammetric Analysis of Belvedere Glacier Evolution in the Period 1977–2019}. \textit{Remote Sensing} 13{,} 3787.}
 
