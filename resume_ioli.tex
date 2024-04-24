@@ -16,7 +16,9 @@
 %
 %============================================================================%
 \begin{document}
-\fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.80\linewidth}
+\fcolorbox{white}{white}{
+
+\begin{minipage}[c][0.95\textheight][t]{0.80\linewidth}
 
 %-------------------------------------------------------------------------------
 %	TITLE HEADLINE
@@ -29,7 +31,7 @@
 %}}
 
 % use this for single words, e.g. CV or RESUME etc.
-\colorbox{bgcol}{\makebox[\mpwidth][c]{\Large{\textcolor{white}{\uppercase{Francesco Ioli}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \RESUME{\textcolor{white}{\uppercase{CV}} } }}
+\colorbox{bgcol}{\makebox[\mpwidth][c]{\Large{\textcolor{white}{\uppercase{Francesco Ioli}}} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \RESUME{\textcolor{white}{\uppercase{CV}}}}}
 
 %-------------------------------------------------------------------------------
 %	HEADER IMAGE
@@ -49,12 +51,12 @@
 	\parbox{0.45\linewidth}{
 		\transparent{1}
 		\begin{center}
-		\larrow{sectcol}\larrow{sectcol}
-		\textcolor{white}{
-        I am a PhD student in Geoinformatics dealing with photogrammetry and 3D reconstruction in challenging situations, as alpine glacier monitoring. 
-        I'm working on Deep Learning image matching. 
-        I like coding and I strongly believe in open source software, data and science.
-        I have a topographic background and I am UAV pilot.}
+    		\larrow{sectcol}\larrow{sectcol}
+    		\textcolor{white}{
+            I am a PhD student in Geoinformatics dealing with photogrammetry and 3D reconstruction in challenging situations, such as alpine glacier monitoring. 
+            I'm working on Deep Learning image matching. 
+            I like coding and strongly believe in open-source software, data, and science.
+            I have a topographic background and I am a UAV pilot.}
 		\end{center}
 	}
 }
@@ -66,25 +68,23 @@
 %-------------------------------------------------------------------------------
 \cvsection{Education}
 
-\cvevent{2020 - now}{PhD Student}{Politecnico di Milano, DICA (Italy)}
-	{
+\cvevent{2020 - now}{PhD Student}{Politecnico di Milano, DICA (Italy)}{
  My research focuses on photogrammetry and 3D reconstruction for territorial and infrastructural monitoring. 
- I have 
- My research focusees on UAV-based and terrestial photogrammetry for land and infrastructure monitoring. I am working on a low-cost image-based system for 4D glacier monitoring (\href{https://github.com/franioli/icepy4d}{ICEpy4D}) and on UAV-photogrammetry for structural health assessment and crack detection on concrete bridges.
-	}
+ My research focuses on UAV-based and terrestrial photogrammetry for land and infrastructure monitoring. I am working on a low-cost image-based system for 4D glacier monitoring (\href{https://github.com/franioli/icepy4d}{ICEpy4D}) and UAV-photogrammetry for structural health assessment and crack detection on concrete bridges.
+}
 
 \cvevent{2022}{Visiting PhD student}{University of Twente, ITC (Netherlands)}{
 Developing a wide-baseline stereo matching workflow with Deep Learning for 4D monitoring of an alpine glacier by using low-cost time-lapse cameras. 
 \href{https://doi.org/10.1007/s41064-023-00272-w}{[Paper]} \href{https://github.com/franioli/icepy4d}{[Code]}
 }
 
-\cvevent{2017 - 2020}{MSc in Environmental and
-Land Planning Engineering}{Politecnico di Milano}{Major in Land Monitoring and Diagnostics. Grade 110L/110.}
-
 \cvevent{2019 - 2020}{Visiting student for MSc Thesis development}{ETH Zürich, VAW (Switzerland)}{
 	\textit{Evaluation of Airborne Image Velocimetry approaches with low-cost UAVs in riverine environments}. Supervisors: Prof. Livio Pinto{,} Dr. Martin
 	Detert \href{http://doi.org/10.13140/RG.2.2.36679.65446}{[Thesis]} \href{https://doi.org/10.5194/isprs-archives-XLIII-B2-2020-597-2020}{[Paper]}
 }
+
+\cvevent{2017 - 2020}{MSc in Environmental and
+Land Planning Engineering}{Politecnico di Milano}{Major in Land Monitoring and Diagnostics. Grade 110L/110.}
 
 \cvevent{2019}{Erasmus exchange}{Aalto University, Helsinki (Finland)}{}
 
@@ -150,7 +150,7 @@ Engineering}{Politecnico di Milano}{}
 
 \cvsection{Selected pubblications}
 
-\cvlist{\underline{Ioli{,} F.}{,} Dematteis{,} N.{,} Giordan{,} D.{,} Nex{,} F. et al.{,} 2024. Deep Learning Low-cost Photogrammetry for 4D Short-term Glacier Dynamics Monitoring. \textit{PFG}. \href{https://doi.org/10.1007/s41064-023-00272-w}{[Paper]} \href{https://github.com/franioli/icepy4d}{[Code]}}
+\cvlist{\underline{Ioli{,} F.}{,} Dematteis{,} N.{,} Giordan{,} D.{,} Nex{,} F. et al.{,} 2024. Deep Learning Low-cost Photogrammetry for 4D Short-term Glacier Dynamics Monitoring. \textit{PFG – Journal of Photogrammetry, Remote Sensing and Geoinformation Science}. \href{https://doi.org/10.1007/s41064-023-00272-w}{[Paper]} \href{https://github.com/franioli/icepy4d}{[Code]}}
 
 \cvlist{Gaspari{,} F.{,} Barbieri{,} F.{,} Fascia{,} R.{,} \underline{Ioli{,} F.}{,} Pinto{,} L.{,} 2024. An Open-Source Web Platform for 3D Documentation and Storytelling of Hidden Cultural Heritage. \textit{Heritage} 7(2){,} 517-536. \href{https://doi.org/10.3390/heritage7020025}{[Paper]} \href{https://github.com/labmgf-polimi/potree-chtemplate}{[Code]}}
 
@@ -175,7 +175,7 @@ For a complete and up-to-date publication list{,} visit my ResearchGate page \hr
 \href{https://www.dica.polimi.it/francesco-ioli-primo-classificato-nel-premio-giovani-2023-sezione-ricerca/}{Young Researcher Prize} of the Italian Society of Photogrammetry and Remote Sensing (SIFET) 2023
 }
 
-\cvlist{Winner of the EGU Higher Education teaching grant for the open teaching material for the Summer School \href{https://www.egu.eu/education/teg/hetg/2023/}{Design and implementation of topographic surveys for territorial monitoring in mountain environments}.}
+\cvlist{Winner of the \href{https://www.egu.eu/education/teg/hetg/2023/}{EGU Higher Education teaching grant} for the open teaching material for the Summer School "Design and implementation of topographic surveys for territorial monitoring in mountain environments" \href{ https://tars4815.github.io/belvedere-summer-school/}{[Teaching material]}.}
 
 \vspace{12pt}
 
